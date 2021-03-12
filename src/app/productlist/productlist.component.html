@@ -1,0 +1,23 @@
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="row">
+  <div class="col-md-5">
+    <table class="table">
+ <tbody>
+        <tr *ngFor="let product of products2; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{product.product}}</td>
+          <td>{{product.instock}}</td>
+          <td>{{product.warehouse}}</td>
+          <td (click)="onDeleteProduct(i)"><a class="text-danger"><i class="fa fa-trash"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+    </div>
+    </body>
+
+
+
+

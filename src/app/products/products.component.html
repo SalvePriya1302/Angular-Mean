@@ -1,0 +1,49 @@
+<div class="page-area"></div>
+
+<div class="row">
+<div class="col-md-5">
+  <h2>{{dataTitle}}</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="product">Product</label>
+      <input type="text" class="form-control" id="product" placeholder="Product" #product>
+
+    </div>
+    <div class="form-group">
+      <label for="stock">InStock</label>
+      <input type="number" class="form-control" id="stock" placeholder="Quantity" #stock>
+    </div>
+    <div class="form-group">
+      <label for="place">Warehouse</label>
+      <input type="text" class="form-control" id="place" placeholder="Place" #place>
+   </div>
+   <button type="reset" class="btn btn-primary" (click)="onAddProduct(product, stock, place)">Add Product</button>
+   <button type="reset" class="btn btn-success" (click)="onSaveProduct(product, stock, place)">Save Product</button>
+
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product</th>
+        <th scope="col">In Stock</th>
+        <th scope="col">Warehouse</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{product.product}}</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.place}}</td>
+        <td (click)="onDeleteProduct(product.id)"><a class="text-danger"><i class="fas fa-trash-alt"></i></a></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
