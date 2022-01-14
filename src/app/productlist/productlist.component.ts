@@ -33,6 +33,7 @@ export class ProductlistComponent implements OnInit {
       console.log('productlist init');
       this.productsService.getProducts().subscribe((res)=>{
         this.products = res;
+        console.log("Priya development");
         //console.log('type of res '+typeof res + JSON.stringify(res));
         this.products = JSON.stringify(this.products);
         this.products2 = JSON.parse(this.products).product;
